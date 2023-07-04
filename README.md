@@ -8,18 +8,13 @@ The aim of this document is to aggregate functions in order to provide transpare
 Any smart-contract could be a resolver. A Resolver contract is responsible for retrieving the data associated with a name.
 The ENS Registry contract stores the address of the resolver contract responsible for a name.
 
-| Contract | Address                                                                                                               |
-| -------- | --------------------------------------------------------------------------------------------------------------------- |
-| Public   | [0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41](https://etherscan.io/address/0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41) |
-
-### Public Resolver
-
 There is however one special resolver, the "public resolver". This resolver is a generalized key-value storage resolver that anyone can use.
 It is the default resolver for all names, unless changed by the user through [setting resolver](#setting-resolver).
 
-#### Public Resolver 2
-
-resolver.eth
+| Contract          | Address                                                                                                                            |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Public Resolver   | resolver.eth [0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63](https://etherscan.io/address/0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63) |
+| Public Resolver 2 | [0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41](https://etherscan.io/address/0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41)              |
 
 ## ETH Registrar
 
@@ -30,7 +25,8 @@ ETHRegistrarController / ETHRegistrar / Old ETHRegistrar Controller
 | ETH Registrar Controller     | [0x253553366da8546fc250f225fe3d25d0c782303b](https://etherscan.io/address/0x253553366da8546fc250f225fe3d25d0c782303b) |
 | Old ETH Registrar Controller | [0x283af0b28c62c092c9727f1ee09c02ca627eb7f5](https://etherscan.io/address/0x283af0b28c62c092c9727f1ee09c02ca627eb7f5) |
 
-### `commit(commitment bytes32)`
+### Commit
+> `commit(commitment bytes32)`
 
 Signature: 0xf14fcbc8
 
@@ -114,7 +110,7 @@ This functionality includes creating trustless namewrapper subnames (a seperate 
 
 ### `proveAndClaimWithResolver(name bytes, input DNSSEC.RRSetWithSignature[], resolver address, addr address)`
 
-Signature 
+Signature
 
 [Contract Implementation](https://github.com/ensdomains/ens-contracts/blob/787c5d8f1a99ad14435a65784a7c5ceca1e2575e/contracts/dnsregistrar/DNSRegistrar.sol#L101)
 
