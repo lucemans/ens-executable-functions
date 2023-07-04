@@ -3,6 +3,11 @@
 These are interactions the ENS Manager dApp suggests might suggest the user execute.
 The aim of this document is to aggregate functions in order to provide transparency in user frontends.
 
+Other handy links:
+- [ENS Docs](https://docs.ens.domains/)
+- [ENS Alpha Docs](https://alpha-docs.ens.domains/)
+- [EIP-137 Ethereum Domain Name Service Specification](https://eips.ethereum.org/EIPS/eip-137)
+
 ## Resolvers
 
 Any smart-contract could be a resolver. A Resolver contract is responsible for retrieving the data associated with a name.
