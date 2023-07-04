@@ -4,9 +4,10 @@ These are interactions the ENS Manager dApp suggests might suggest the user exec
 The aim of this document is to aggregate functions in order to provide transparency in user frontends.
 
 Other handy links:
-- [ENS Docs](https://docs.ens.domains/)
-- [ENS Alpha Docs](https://alpha-docs.ens.domains/)
-- [EIP-137 Ethereum Domain Name Service Specification](https://eips.ethereum.org/EIPS/eip-137)
+
+-   [ENS Docs](https://docs.ens.domains/)
+-   [ENS Alpha Docs](https://alpha-docs.ens.domains/)
+-   [EIP-137 Ethereum Domain Name Service Specification](https://eips.ethereum.org/EIPS/eip-137)
 
 ## Resolvers
 
@@ -16,10 +17,10 @@ The ENS Registry contract stores the address of the resolver contract responsibl
 There is however one special resolver, the "public resolver". This resolver is a generalized key-value storage resolver that anyone can use.
 It is the default resolver for all names, unless changed by the user through [setting resolver](#setting-resolver).
 
-| Contract          | Address                                                                                                                            |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Contract          | Address                                                                                                                                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Public Resolver   | [resolver.eth](https://ens.app/resolver.eth) [0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63](https://etherscan.io/address/0x231b0Ee14048e9dCcD1d247744d114a4EB5E8E63) |
-| Public Resolver 2 | [0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41](https://etherscan.io/address/0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41)              |
+| Public Resolver 2 | [0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41](https://etherscan.io/address/0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41)                                              |
 
 ## ETH Registrar
 
@@ -96,11 +97,11 @@ Open ENS Manager dApp, navigate to any name, select "Extend", press "Next", "Ope
 
 ## ReverseRegistrar
 
-| Contract          | Address                                                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Contract          | Address                                                                                                                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Reverse Registrar | [reverse.ens.eth](https://ens.app/reverse.ens.eth) [0xa58E81fe9b61B5c3fE2AFD33CF304c454AbFc7Cb](https://etherscan.io/address/0xa58E81fe9b61B5c3fE2AFD33CF304c454AbFc7Cb) |
-| Old               | [0x9062C0A6Dbd6108336BcBe4593a3D1cE05512069](https://etherscan.io/address/0x9062C0A6Dbd6108336BcBe4593a3D1cE05512069)                 |
-| Old 2             | [0x084b1c3C81545d370f3634392De611CaaBFf8148](https://etherscan.io/address/0x084b1c3C81545d370f3634392De611CaaBFf8148)                 |
+| Old               | [0x9062C0A6Dbd6108336BcBe4593a3D1cE05512069](https://etherscan.io/address/0x9062C0A6Dbd6108336BcBe4593a3D1cE05512069)                                                    |
+| Old 2             | [0x084b1c3C81545d370f3634392De611CaaBFf8148](https://etherscan.io/address/0x084b1c3C81545d370f3634392De611CaaBFf8148)                                                    |
 
 ### Set Name
 
@@ -119,7 +120,22 @@ Open ENS Manager dApp, navigate to [/my/settings](https://ens.app/my/settings), 
 The NameWrapper is a contract users can use to "wrap" their name in order to provide it with additional functionality.
 This functionality includes creating trustless namewrapper subnames (a seperate ERC721 token).
 
-## StaticBulkRenewal
+## Bulk Renewal
+
+| Contract          | Address                                                                                                               |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Bulk Renewal      | [0xff252725f6122a92551a5fa9a6b6bf10eb0be035](https://etherscan.io/address/0xff252725f6122a92551a5fa9a6b6bf10eb0be035) |
+| StaticBulkRenewal | [0xa12159e5131b1eEf6B4857EEE3e1954744b5033A](https://etherscan.io/address/0xa12159e5131b1eEf6B4857EEE3e1954744b5033A) |
+
+### Renew All
+
+| Function                                   | Signature  | Implementation | Example Transaction |
+| ------------------------------------------ | ---------- | -------------- | ------------------- |
+| renewAll(names string[], duration uint256) | 0xe8d6dbb4 |                |                     |
+
+#### To reproduce
+
+Open ENS Manager dApp, navigate to [/my/names](https://ens.app/my/names), click the Circled Checkmark to enable Multi Selection, select multiple names, press "Extend", "Next", "Next", "Open Wallet"
 
 ## DNSRegistrar
 
@@ -136,8 +152,6 @@ This functionality includes creating trustless namewrapper subnames (a seperate 
 | `proveAndClaimWithResolver(name bytes, input DNSSEC.RRSetWithSignature[], resolver address, addr address)` |           | [Contract Implementation](https://github.com/ensdomains/ens-contracts/blob/787c5d8f1a99ad14435a65784a7c5ceca1e2575e/contracts/dnsregistrar/DNSRegistrar.sol#L101) |                     |
 
 Basically what [registerWithConfig](#register-with-config) is to [register](#register), [proveAndClaimWithResolver](#proveandclaimwithresolvername-bytes-input-dnssecrrsetwithsignature-resolver-address-addr-address) is to [proveAndClaim](#proveandclaimname-bytes-input-dnssecrrsetwithsignature).
-
-## Old BulkRenewal
 
 ## Other
 
